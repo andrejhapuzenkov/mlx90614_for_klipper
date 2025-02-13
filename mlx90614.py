@@ -1,6 +1,6 @@
 # Support for I2C based MLX90614 temperature sensors
 #
-# Copyright (C) 2025  Andrej Hapuzenkov <andrejhapuzenkov@gmail.com>
+# Copyright (C) 2025  Andrej Hapuzenkov <andrejhapuzenkov@gmail.com>, https://github.com/andrejhapuzenkov/mlx90614_for_klipper.git
 #
 # This file may be distributed under the terms of the GNU GPLv3 license.
 import logging
