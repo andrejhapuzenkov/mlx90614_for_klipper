@@ -67,8 +67,9 @@ class MLX90614:
         try:
             prodid = self.read_register('MLX90614_ID1', 1)[0]
             logging.info("mlx90614: Chip ID %#x" % prodid)
-        except:
-            pass
+        except Exception:
+            logging.exception("mlx90614: Error reading Chip ID")
+            return self.reactor.NEVER
 
     def _sample_mlx90614(self, eventtime):
         try:
@@ -89,7 +90,7 @@ class MLX90614:
         return measured_time + self.report_time
 
     def degrees_from_sample(self, x):
-        return (x * 0.02) - 273.15
+        return ((x[0]+x[1]>>8) * 0.02) - 273.15
 
     def read_register(self, reg_name, read_len):
         # read a single register
