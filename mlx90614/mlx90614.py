@@ -10,22 +10,22 @@ MLX90614_CHIP_ADDR = 0x5A
 MLX90614_I2C_SPEED = 100000
 
 MLX90614_REGS = {
-          'MLX90614_RAWIR1' : 0x04, # Raw data IR channel 1
-          'MLX90614_RAWIR2' : 0x05, # Raw data IR channel 2
-          'MLX90614_TA'     : 0x06, # Ambient temperature
-          'MLX90614_TOBJ1'  : 0x07, # Object 1 temperature
-          'MLX90614_TOBJ2'  : 0x08, # Object 2 temperature
-          'MLX90614_TOMAX'  : 0x20, # Object temperature max register
-          'MLX90614_TOMIN'  : 0x21, # Object temperature min register
-          'MLX90614_PWMCTRL': 0x22, # PWM configuration register
-          'MLX90614_TARANGE': 0x23, # Ambient temperature register
-          'MLX90614_EMISS'  : 0x24, # Emissivity correction register
-          'MLX90614_CONFIG' : 0x25, # Configuration register
-          'MLX90614_ADDR'   : 0x2E, # Slave address register
-          'MLX90614_ID1'    : 0x3C, # 1 ID register (read-only)
-          'MLX90614_ID2'    : 0x3D, # 2 ID register (read-only)
-          'MLX90614_ID3'    : 0x3E, # 3 ID register (read-only)
-          'MLX90614_ID4'    : 0x3F  # 4 ID register (read-only)
+    'MLX90614_RAWIR1' : 0x04, # Raw data IR channel 1
+    'MLX90614_RAWIR2' : 0x05, # Raw data IR channel 2
+    'MLX90614_TA'     : 0x06, # Ambient temperature
+    'MLX90614_TOBJ1'  : 0x07, # Object 1 temperature
+    'MLX90614_TOBJ2'  : 0x08, # Object 2 temperature
+    'MLX90614_TOMAX'  : 0x20, # Object temperature max register
+    'MLX90614_TOMIN'  : 0x21, # Object temperature min register
+    'MLX90614_PWMCTRL': 0x22, # PWM configuration register
+    'MLX90614_TARANGE': 0x23, # Ambient temperature register
+    'MLX90614_EMISS'  : 0x24, # Emissivity correction register
+    'MLX90614_CONFIG' : 0x25, # Configuration register
+    'MLX90614_ADDR'   : 0x2E, # Slave address register
+    'MLX90614_ID1'    : 0x3C, # 1 ID register (read-only)
+    'MLX90614_ID2'    : 0x3D, # 2 ID register (read-only)
+    'MLX90614_ID3'    : 0x3E, # 3 ID register (read-only)
+    'MLX90614_ID4'    : 0x3F  # 4 ID register (read-only)
     }
         
 MLX90614_REPORT_TIME = .8
