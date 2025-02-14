@@ -1,4 +1,4 @@
-# Support for I2C based MLX90614 temperature sensors
+# Support for I2C based MLX90614 temperature sensors or HEIMANN HID A15 F5.5 T380
 #
 # Copyright (C) 2025  Andrej Hapuzenkov <andrejhapuzenkov@gmail.com>, https://github.com/andrejhapuzenkov/mlx90614_for_klipper.git
 #
