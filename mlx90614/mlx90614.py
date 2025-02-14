@@ -33,7 +33,7 @@ MLX90614_MIN_REPORT_TIME = .5
 
 
 class MLX90614:
-    comm_retries = 5
+    #comm_retries = 5
 
     def __init__(self, config):
         self.printer = config.get_printer()
@@ -96,10 +96,11 @@ class MLX90614:
         return ((x[0] | x[1]<<8) * 0.02) - 273.15
 
     def read_register(self, reg_name, read_len):
-        # a single register reading cycle
+        # a single register reading
         regs = [MLX90614_REGS[reg_name]]
         params = self.i2c.i2c_read(regs, read_len)
         return bytearray(params['response'])
+        # a single register reading cycle
         #for i in range(self.comm_retries):
         #    try:
         #        params = self.i2c.i2c_read(regs, read_len)
