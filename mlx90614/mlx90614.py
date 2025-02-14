@@ -31,7 +31,10 @@ MLX90614_REGS = {
 MLX90614_REPORT_TIME = .8
 MLX90614_MIN_REPORT_TIME = .5
 
+
 class MLX90614:
+    comm_retries = 5
+
     def __init__(self, config):
         self.printer = config.get_printer()
         self.name = config.get_name().split()[-1]
@@ -90,13 +93,21 @@ class MLX90614:
         return measured_time + self.report_time
 
     def degrees_from_sample(self, x):
-        return ((x[0]+x[1]>>8) * 0.02) - 273.15
+        return ((x[0] | x[1]<<8) * 0.02) - 273.15
 
     def read_register(self, reg_name, read_len):
-        # read a single register
+        # a single register reading cycle
         regs = [MLX90614_REGS[reg_name]]
         params = self.i2c.i2c_read(regs, read_len)
         return bytearray(params['response'])
+        #for i in range(self.comm_retries):
+        #    try:
+        #        params = self.i2c.i2c_read(regs, read_len)
+        #        #return bytearray(params['response'])
+        #    except Exception:
+        #        logging.exception("mlx90614: Error reading register")
+        #return bytearray(params['response'])
+
 
     def write_register(self, reg_name, data):
         if type(data) is not list:
